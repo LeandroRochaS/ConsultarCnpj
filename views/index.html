@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"
+    integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+  <link rel="stylesheet" href="/styles/style.css" />
+
+  <title>Consultor CPNJ</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <a target="_blank" href="https://www.gov.br/pt-br">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Gov.br_logo.svg" alt="logo" />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a target="_blank" href="https://cnpj.linkana.com/">CNPJS</a></li>
+          <li><a href="/views/index.html">Consultar</a></li>
+          <li><a target="_blank" href="https://www.gov.br/conecta/catalogo/apis/consulta-cnpj">Sobre</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="corpo-container">
+      <div class="corpo">
+        <div class="texto">
+          <h1>Consultor CNPJ</h1>
+          <p>Consulte informações de CNPJ de forma rápida e prática.</p>
+        </div>
+        <div class="form-container">
+          <form action="/consultar" method="POST">
+            <input data-mask="99.999.999/0001-99" type="text" name="cnpj" id="cnpj" placeholder="Digite o CNPJ" />
+            <button id="buttonSubmit" type="submit"><img src="/assets/images/svg/search.svg" /></button>
+          </form>
+        </div>
+        <div class="dados-container" id="dados-container">
+          <input disabled type="text" id="nome" placeholder="Nome" />
+
+          <input disabled type="text" id="fantasia" placeholder="Fantasia" />
+          <input disabled type="text" id="logradouro" placeholder="Logradouro" />
+          <input disabled type="text" id="numero" placeholder="Número" />
+          <input disabled type="text" id="bairro" placeholder="Bairro" />
+          <input disabled type="text" id="municipio" placeholder="Município" />
+          <input disabled type="text" id="uf" placeholder="UF" />
+          <input disabled type="text" id="cep" placeholder="CEP" />
+          <input disabled type="text" id="telefone" placeholder="Telefone" />
+          <input disabled type="text" id="email" placeholder="Email" />
+        </div>
+      </div>
+
+    </section>
+  </div>
+</body>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="/scripts/main.js"></script>
+
+</html>
