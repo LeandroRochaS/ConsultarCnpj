@@ -11,7 +11,6 @@ $("#buttonSubmit").click(function (e) {
 
 function consultarCnpj(cnpj) {
   cnpj = cnpj.replace(/[^\d]+/g, "");
-  console.log(cnpj);
 
   $.ajax({
     url: `https://receitaws.com.br/v1/cnpj/${cnpj}`,
@@ -20,14 +19,6 @@ function consultarCnpj(cnpj) {
     crossDomain: true,
     contentType: "application/json",
     success: function (data) {
-      Toastify({
-        text: "Sucesso",
-        duration: 3000,
-        gravity: "top",
-        position: "right",
-        backgroundColor: "green",
-      }).showToast();
-      console.log(data);
       $("#nome").val(data.nome);
       $("#fantasia").val(data.fantasia);
       $("#logradouro").val(data.logradouro);
@@ -49,6 +40,14 @@ function consultarCnpj(cnpj) {
           backgroundColor: "red",
         }).showToast();
         return;
+      } else {
+        Toastify({
+          text: "Sucesso",
+          duration: 3000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "green",
+        }).showToast();
       }
     },
   });
